@@ -6,7 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude-Code-5A67D8)](https://claude.ai)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/hyeonsung/cc-save-plan)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/dukbong/cc-save-plan)
 
 [Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Examples](#-examples) • [Contributing](#-contributing)
 
@@ -38,7 +38,7 @@ claude plugin install stash
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/hyeonsung/cc-save-plan.git
+   git clone https://github.com/dukbong/cc-save-plan.git
    cd cc-save-plan
    ```
 
@@ -179,14 +179,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **hyeonsung**
 
-- GitHub: [@hyeonsung](https://github.com/hyeonsung)
+- GitHub: [@dukbong](https://github.com/dukbong)
 
 ## 🔗 Links
 
-- [GitHub Repository](https://github.com/hyeonsung/cc-save-plan)
+- [GitHub Repository](https://github.com/dukbong/cc-save-plan)
 - [Claude Code Documentation](https://docs.anthropic.com/claude-code)
-- [Report Issues](https://github.com/hyeonsung/cc-save-plan/issues)
-- [Request Features](https://github.com/hyeonsung/cc-save-plan/issues/new)
+- [Report Issues](https://github.com/dukbong/cc-save-plan/issues)
+- [Request Features](https://github.com/dukbong/cc-save-plan/issues/new)
 
 ## 🙏 Acknowledgments
 
