@@ -1,10 +1,10 @@
 {
-  "name": "save-plan",
+  "name": "stash",
   "version": "1.0.0",
   "description": "Save auto-generated plan files to your project",
   "author": {
     "name": "hyeonsung"
   },
-  "repository": "https://github.com/hyeonsung/cc-save-plan",
+  "repository": "https://github.com/dukbong/cc-save-plan",
   "keywords": ["plan", "workflow", "organization"]
 }

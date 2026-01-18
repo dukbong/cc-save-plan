@@ -31,7 +31,7 @@ When you use `/plan` in Claude Code, plan files are automatically generated in `
 ### From Claude Marketplace (Recommended)
 
 ```bash
-claude plugin install save-plan
+claude plugin install stash
 ```
 
 ### Manual Installation
@@ -52,7 +52,7 @@ claude plugin install save-plan
 ### Basic Command
 
 ```bash
-/save-plan <plan_name>
+/stash:it <plan_name>
 ```
 
 ### How It Works
@@ -67,9 +67,9 @@ The plugin automatically sanitizes filenames for you:
 
 | Input | Output |
 |-------|--------|
-| `/save-plan My Plan!` | `My-Plan.md` |
-| `/save-plan auth_refactor` | `auth_refactor.md` |
-| `/save-plan plan-v2.md` | `plan-v2.md` |
+| `/stash:it My Plan!` | `My-Plan.md` |
+| `/stash:it auth_refactor` | `auth_refactor.md` |
+| `/stash:it plan-v2.md` | `plan-v2.md` |
 
 - Valid characters: alphanumeric, hyphens (`-`), underscores (`_`)
 - `.md` extension added automatically if not provided
@@ -88,7 +88,7 @@ If a file with the same name already exists, you'll be prompted with three optio
 ### Example 1: Basic Usage
 
 ```bash
-/save-plan feature-implementation
+/stash:it feature-implementation
 ```
 
 **Output:**
@@ -100,7 +100,7 @@ Full path: /home/user/project/.claude/plan/feature-implementation.md
 ### Example 2: Handling Duplicates
 
 ```bash
-/save-plan auth-refactor
+/stash:it auth-refactor
 ```
 
 If `auth-refactor.md` already exists, you'll see:
@@ -114,7 +114,7 @@ A plan file named 'auth-refactor.md' already exists. What would you like to do?
 ### Example 3: Special Characters
 
 ```bash
-/save-plan "My New Feature!!"
+/stash:it "My New Feature!!"
 ```
 
 The plugin automatically sanitizes to: `My-New-Feature.md`
@@ -126,7 +126,7 @@ cc-save-plan/
 ├── .claude-plugin/
 │   └── plugin.json              # Plugin manifest and metadata
 ├── commands/
-│   └── save-plan.md             # Slash command definition and logic
+│   └── it.md                    # Slash command definition and logic
 ├── LICENSE                      # MIT License
 └── README.md                    # This file
 ```
@@ -143,7 +143,7 @@ cc-save-plan/
 
 | Message | Meaning | Solution |
 |---------|---------|----------|
-| `Usage: /save-plan <plan_name>` | No plan name provided | Provide a name: `/save-plan my-plan` |
+| `Usage: /stash:it <plan_name>` | No plan name provided | Provide a name: `/stash:it my-plan` |
 | `No plan files found in ~/.claude/plans/` | No plans exist yet | Run `/plan` first to generate a plan |
 | `Operation cancelled.` | User chose to cancel | Run the command again when ready |
 

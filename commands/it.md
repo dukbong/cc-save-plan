@@ -12,7 +12,7 @@ Copy the latest auto-generated plan file from `~/.claude/plans/` to your project
 
 1. **Validate Arguments**
    - Check if a plan name was provided via `$ARGUMENTS`
-   - If empty, respond with: "Usage: /save-plan <plan_name>"
+   - If empty, respond with: "Usage: /stash:it <plan_name>"
    - Extract the plan name from `$ARGUMENTS`
 
 2. **Sanitize Filename**
@@ -52,7 +52,7 @@ Copy the latest auto-generated plan file from `~/.claude/plans/` to your project
 ## Example
 
 ```
-User: /save-plan feature-implementation
+User: /stash:it feature-implementation
 
 Output:
 Plan saved successfully to .claude/plan/feature-implementation.md
