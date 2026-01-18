@@ -28,10 +28,18 @@ When you use `/plan` in Claude Code, plan files are automatically generated in `
 
 ## 📦 Installation
 
-### From Claude Marketplace (Recommended)
+### From GitHub URL (Recommended)
 
 ```bash
-claude plugin install stash
+claude plugin install https://github.com/dukbong/cc-save-plan
+```
+
+### From Claude Marketplace (Coming Soon)
+
+Once approved by Anthropic, you'll be able to install via:
+
+```bash
+claude plugin install stash@claude-plugin-directory
 ```
 
 ### Manual Installation
