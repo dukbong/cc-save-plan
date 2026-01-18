@@ -2,6 +2,10 @@
 .claude/settings.local.json
 .claude/
 
+# Local marketplace testing files
+.claude-plugin/marketplace.json
+plugins/
+
 # OS files
 .DS_Store
 Thumbs.db
