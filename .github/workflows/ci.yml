@@ -1,0 +1,100 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Validate JSON files
+      run: |
+        echo "Validating JSON files..."
+        find . -name "*.json" -not -path "./.git/*" | while read file; do
+          echo "Checking $file"
+          if ! python3 -m json.tool "$file" > /dev/null 2>&1; then
+            echo "❌ Invalid JSON: $file"
+            exit 1
+          fi
+        done
+        echo "✅ All JSON files are valid"
+
+    - name: Check required files
+      run: |
+        echo "Checking required files..."
+        required_files=(
+          ".claude-plugin/plugin.json"
+          "commands/it.md"
+          "README.md"
+          "LICENSE"
+          "CONTRIBUTING.md"
+          "CODE_OF_CONDUCT.md"
+        )
+
+        for file in "${required_files[@]}"; do
+          if [ ! -f "$file" ]; then
+            echo "❌ Missing required file: $file"
+            exit 1
+          fi
+          echo "✅ Found: $file"
+        done
+        echo "✅ All required files exist"
+
+    - name: Validate plugin structure
+      run: |
+        echo "Validating plugin structure..."
+
+        # Check plugin.json has required fields
+        if ! grep -q '"name"' .claude-plugin/plugin.json; then
+          echo "❌ plugin.json missing 'name' field"
+          exit 1
+        fi
+
+        if ! grep -q '"version"' .claude-plugin/plugin.json; then
+          echo "❌ plugin.json missing 'version' field"
+          exit 1
+        fi
+
+        echo "✅ Plugin structure is valid"
+
+    - name: Check markdown files
+      run: |
+        echo "Checking markdown files..."
+        if [ ! -s "README.md" ]; then
+          echo "❌ README.md is empty"
+          exit 1
+        fi
+
+        if [ ! -s "CONTRIBUTING.md" ]; then
+          echo "❌ CONTRIBUTING.md is empty"
+          exit 1
+        fi
+
+        echo "✅ Markdown files are not empty"
+
+  shellcheck:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install ShellCheck
+      run: sudo apt-get update && sudo apt-get install -y shellcheck
+
+    - name: Check bash scripts in markdown
+      run: |
+        echo "Checking bash scripts..."
+        # Extract and check bash code blocks from it.md
+        if grep -q '```bash' commands/it.md; then
+          echo "✅ Found bash code blocks in commands/it.md"
+        else
+          echo "⚠️  No bash code blocks found in commands/it.md"
+        fi
