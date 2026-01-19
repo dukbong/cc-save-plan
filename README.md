@@ -174,7 +174,7 @@ Contributions are welcome! Here's how you can help:
 ### Development Setup
 
 ```bash
-git clone https://github.com/hyeonsung/cc-save-plan.git
+git clone https://github.com/dukbong/cc-save-plan.git
 cd cc-save-plan
 claude plugin link .
 ```
@@ -185,7 +185,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👤 Author
 
-**hyeonsung**
+**dukbonog**
 
 - GitHub: [@dukbong](https://github.com/dukbong)
 
@@ -207,6 +207,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **If you find this plugin helpful, please consider giving it a ⭐️!**
 
-Made with ❤️ by hyeonsung
+Made with ❤️ by dukbong
 
 </div>
